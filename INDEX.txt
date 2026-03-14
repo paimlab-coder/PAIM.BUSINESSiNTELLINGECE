@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diogo Paim - Especialista em Pricing e GTM</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1220;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b1220, #111827, #1f2937);
+      padding: 72px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #d1d5db;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    p.lead {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #22c55e;
+      color: #081018;
+    }
+
+    .btn-primary:hover {
+      background: #16a34a;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 28px;
+      color: #22c55e;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #cbd5e1;
+      max-width: 820px;
+      margin: 0 auto 36px;
+    }
+
+    .platforms {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .platform {
+      background: rgba(255,255,255,0.05);
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .tab {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #d1d5db;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .card small {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      margin: 12px 0 18px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .link-pill {
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #e5e7eb;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .template-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 28px 0 32px;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .template-card {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0b1220;
+      background: #facc15;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .template-card h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .template-card p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .cta-box {
+      margin-top: 40px;
+      text-align: center;
+      padding: 34px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.18), rgba(59,130,246,0.16));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .tip {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: linear-gradient(180deg, #0b1220, #111827);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 0;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .cards,
+      .template-grid,
+      .tips-grid,
+      .stats,
+      .template-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .hero-grid,
+      .cards,
+      .template-grid,
+      .tips-grid,
+      .stats,
+      .template-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 52px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge-list">
+          <span class="badge">Vendas</span>
+          <span class="badge">B2B</span>
+          <span class="badge">Benchmarking</span>
+          <span class="badge">Inbound</span>
+          <span class="badge">Outbound</span>
+          <span class="badge">Lead Scoring</span>
+          <span class="badge">Dashboard</span>
+          <span class="badge">Indicadores</span>
+          <span class="badge">Estratégia</span>
+          <span class="badge">Pricing Vertical</span>
+          <span class="badge">Pipeline</span>
+          <span class="badge">Concorrência</span>
+        </div>
+
+        <h1>Diogo Paim</h1>
+        <h3>Especialista em Pricing, GTM e Estratégia de Vendas</h3>
+        <p class="lead">
+          Aprenda as estratégias que usei para vender com margem, dominar o pricing
+          e lançar produtos com sucesso no mercado.
+        </p>
+
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom: 18px;">
+          <a class="btn btn-primary" href="#produtos">Explorar Produtos</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/" target="_blank">Instagram do Autor Criador</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <strong>10+</strong>
+            <span>Produtos</span>
+          </div>
+          <div class="stat-card">
+            <strong>3</strong>
+            <span>Categorias</span>
+          </div>
+          <div class="stat-card">
+            <strong>5+</strong>
+            <span>Plataformas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://diogopaim-bqzfx86q.manus.space/" alt="Diogo Paim" />
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="produtos">
+    <div class="container">
+      <h2 class="section-title">Meus Produtos e Cursos</h2>
+      <p class="section-subtitle">
+        Acesso a estratégias comprovadas para vender com margem, dominar pricing e lançar produtos com sucesso.
+      </p>
+
+      <div class="platforms">
+        <span class="platform">Amazon</span>
+        <span class="platform">Kindle</span>
+        <span class="platform">Mercado Livre</span>
+        <span class="platform">Hotmart</span>
+        <span class="platform">Bok2</span>
+      </div>
+
+      <div class="tabs">
+        <span class="tab">Todos os Produtos</span>
+        <span class="tab">Vendas</span>
+        <span class="tab">Pricing</span>
+        <span class="tab">Go to Market</span>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <small>Vendas</small>
+          <h3>Vender com Margem</h3>
+          <p>
+            Aprenda estratégias comprovadas para vender seus produtos com maior margem de lucro em diferentes plataformas.
+          </p>
+          <strong>Disponível em 6 plataformas</strong>
+          <div class="links">
+            <a class="link-pill" href="https://a.co/" target="_blank">Amazon</a>
+            <a class="link-pill" href="https://produto.mercadolivre.com.br/" target="_blank">Mercado Livre</a>
+            <a class="link-pill" href="https://www.livrariadabok2.com.br/" target="_blank">Bok2 Livraria</a>
+            <a class="link-pill" href="https://hotmart.com/" target="_blank">Hotmart (Ebook)</a>
+            <a class="link-pill" href="https://a.co/" target="_blank">Kindle (Capa Comum)</a>
+            <a class="link-pill" href="https://a.co/" target="_blank">Kindle (Ebook)</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <small>Pricing</small>
+          <h3>Inteligência de Mercado e Pricing Estratégico</h3>
+          <p>
+            Domine as técnicas de análise de mercado e precificação estratégica para maximizar seus lucros.
+          </p>
+          <strong>Disponível em 2 plataformas</strong>
+          <div class="links">
+            <a class="link-pill" href="https://a.co/" target="_blank">Kindle Unlimited</a>
+            <a class="link-pill" href="https://hotmart.com/" target="_blank">Hotmart (Ebook)</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <small>Go to Market</small>
+          <h3>Go to Market (GTM)</h3>
+          <p>
+            Estratégia completa de Go to Market para lançar seus produtos com sucesso no mercado.
+          </p>
+          <strong>Disponível em 2 plataformas</strong>
+          <div class="links">
+            <a class="link-pill" href="https://www.amazon.com.br/" target="_blank">Kindle Unlimited</a>
+            <a class="link-pill" href="https://go.hotmart.com/" target="_blank">Hotmart (Ebook)</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p style="text-align:center; color:#22c55e; font-weight:bold; margin-bottom:8px;">Novo: Templates Power BI</p>
+      <h2 class="section-title">Templates Power BI Otimizados</h2>
+      <p class="section-subtitle">
+        Dashboards estratégicos prontos para usar. Modelos testados e otimizados para converter dados em insights acionáveis.
+      </p>
+
+      <div class="template-stats">
+        <div class="stat-card">
+          <strong>23+</strong>
+          <span>Templates Disponíveis</span>
+        </div>
+        <div class="stat-card">
+          <strong>24</strong>
+          <span>Categorias de Negócio</span>
+        </div>
+        <div class="stat-card">
+          <strong>100%</strong>
+          <span>Prontos para Usar</span>
+        </div>
+      </div>
+
+      <div class="template-grid">
+        <div class="template-card">
+          <span class="tag">Bestseller</span>
+          <h4>Template Power BI / Modelo 01</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <span class="tag">Popular</span>
+          <h4>Template Power BI / Modelo 02</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <h4>Template Power BI / Modelo 03</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <span class="tag">Top</span>
+          <h4>Template Power BI / Modelo 04</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <h4>Template Power BI / Modelo 05</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <h4>Template Power BI / Modelo 06</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <span class="tag">Novo</span>
+          <h4>Template Power BI / Modelo 07</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+
+        <div class="template-card">
+          <h4>Template Power BI / Modelo 08</h4>
+          <p>Template Power BI otimizado. Otimizado para conversão.</p>
+          <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Acessar Template</a>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Pronto para Transformar Seus Dados?</h3>
+        <p style="color:#dbeafe; margin: 10px 0 20px;">
+          Escolha um template, customize conforme sua necessidade e comece a gerar insights em minutos.
+        </p>
+        <a class="btn btn-primary" href="https://go.hotmart.com/" target="_blank">Explorar Todos os Templates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p style="text-align:center; color:#22c55e; font-weight:bold; margin-bottom:8px;">Novo: Curiosidades</p>
+      <h2 class="section-title">Dicas do Dia a Dia</h2>
+      <p class="section-subtitle">
+        Confira insights rápidos sobre negócios, vendas e estratégia comercial.
+      </p>
+
+      <div class="tips-grid">
+        <div class="tip">Estratégia Comercial</div>
+        <div class="tip">Inteligência de Mercado</div>
+        <div class="tip">Fechamento de Vendas</div>
+        <div class="tip">Dicas de Negócios</div>
+        <div class="tip">Insights do Dia</div>
+      </div>
+
+      <div style="text-align:center; margin-top:28px;">
+        <a class="btn btn-outline" href="https://www.instagram.com/" target="_blank">Veja Mais no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container">
+      <h2>Pronto para Transformar Seu Negócio?</h2>
+      <p class="section-subtitle">
+        Explore todos os meus produtos e aprenda as estratégias que funcionam.
+        Conecte-se comigo nas redes sociais para atualizações e conteúdo exclusivo.
+      </p>
+
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="#produtos">Ver Todos os Produtos</a>
+        <a class="btn btn-outline" href="https://www.instagram.com/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Diogo Paim. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
